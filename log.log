@@ -1,0 +1,134 @@
+==>> start action <<==
+Time: 2017-10-26 15:38:23.874289
+Call name is "print_stat" 
+Ounput: 
+For logic disk - D : 
+ Total space - 620203339776 
+ Used space - 403514978304 
+ Free space - 216688361472
+=====>> close <<====== 
+ 
+==>> start action <<==
+Time: 2017-10-26 15:38:26.108446
+Call name is "print_info" 
+ounput: 
+CPU: Intel64 Family 6 Model 142 Stepping 9, GenuineIntel
+ OS: Windows-10-10.0.14393-SP0
+=====>> close <<====== 
+ 
+==>> start action <<==
+Time: 2017-10-26 15:38:37.296684
+Call name is "print_dir" with argument: "D:\python" 
+Ounput: 
+->> django
+->> results
+->> tamplate
+->> try
+->> try.py
+=====>> close <<====== 
+ 
+==>> start action <<==
+Time: 2017-10-26 15:38:44.437995
+Call name is "print_tree" with argument: "D:\python" 
+Ounput: 
+    try/
+    try.py
+        LoggerForCV.7z
+        middleware.py
+            db.sqlite3
+            manage.py
+                settings.py
+                urls.py
+                wsgi.py
+                __init__.py
+                    settings.cpython-36.pyc
+                    urls.cpython-36.pyc
+                    wsgi.cpython-36.pyc
+                    __init__.cpython-36.pyc
+                admin.py
+                apps.py
+                middleware.py
+                models.py
+                tests.py
+                urls.py
+                views.py
+                __init__.py
+                    0001_initial.py
+                    __init__.py
+                        0001_initial.cpython-36.pyc
+                        __init__.cpython-36.pyc
+                    main.html
+                    page1.html
+                    page2.html
+                    admin.cpython-36.pyc
+                    middleware.cpython-36.pyc
+                    models.cpython-36.pyc
+                    urls.cpython-36.pyc
+                    views.cpython-36.pyc
+                    __init__.cpython-36.pyc
+        generated_doc.docx
+        generated_doc0.docx
+        generated_doc1.docx
+        generated_doc2.docx
+        generated_doc3.docx
+        test.docx
+        log.log
+        t.py
+=====>> close <<====== 
+ 
+==>> start action <<==
+Time: 2017-10-26 15:41:49.758930
+Call name is "print_tree" with argument: "D:\python" 
+Ounput: 
+    try/
+    try.py
+        LoggerForCV.7z
+        middleware.py
+            db.sqlite3
+            manage.py
+                settings.py
+                urls.py
+                wsgi.py
+                __init__.py
+                    settings.cpython-36.pyc
+                    urls.cpython-36.pyc
+                    wsgi.cpython-36.pyc
+                    __init__.cpython-36.pyc
+                admin.py
+                apps.py
+                middleware.py
+                models.py
+                tests.py
+                urls.py
+                views.py
+                __init__.py
+                    0001_initial.py
+                    __init__.py
+                        0001_initial.cpython-36.pyc
+                        __init__.cpython-36.pyc
+                    main.html
+                    page1.html
+                    page2.html
+                    admin.cpython-36.pyc
+                    middleware.cpython-36.pyc
+                    models.cpython-36.pyc
+                    urls.cpython-36.pyc
+                    views.cpython-36.pyc
+                    __init__.cpython-36.pyc
+        generated_doc.docx
+        generated_doc0.docx
+        generated_doc1.docx
+        generated_doc2.docx
+        generated_doc3.docx
+        test.docx
+        log.log
+        t.py
+=====>> close <<====== 
+ 
+==>> start action <<==
+Time: 2017-10-26 15:55:26.668706
+FileNotFoundError
+Call method: print_dir
+Arguments: 345
+=====>> close <<====== 
+ 
