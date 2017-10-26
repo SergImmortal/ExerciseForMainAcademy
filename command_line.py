@@ -5,25 +5,26 @@ import sys
 import platform
 import datetime
 import inspect
-def write_log(arg):
-	with open('log.log', 'a') as f:
-		now = datetime.datetime.now()
-		f.write('==>> start action <<==\nTime: '+str(now)+ '\n' + str(arg) + '\n=====>> close <<====== \n \n')
-		return
-
-def print_stat():
+def logger(func):
+	def write_log(arg):
+		with open('log.log', 'a') as f:
+			now = datetime.datetime.now()
+			res = func(arg)
+			log = 'Call name is "{}" with argument: "{}" \nOunput: \n{}'.format(func.__name__, arg, res)
+			f.write('==>> start action <<==\nTime: '+str(now)+ '\n' + str(log) + '\n=====>> close <<====== \n \n')
+			return res
+	return write_log
+@logger
+def print_stat(arg):
     st = shutil.disk_usage(os.getcwd())
     res = "For logic disk - {} : \n Total space - {} \n Used space - {} \n Free space - {}".format(os.getcwd()[0], st.total, st.used, st.free)
-    print(res)
-    return write_log('Call name is "{}" \nOunput: \n{}'.format(inspect.stack()[0][3], res) )
+    return res
 
-
+@logger
 def print_dir(arg):
 	res = '\n'.join(('->> ' + i) for i in os.listdir(arg))
-	print(res)
-	return write_log('Call name is "{}" with argument: "{}" \nOunput: \n{}'.format(inspect.stack()[0][3], arg, res))
-
-
+	return res
+@logger
 def print_tree(arg):
     levl2 = []
     for root, dirs, files in os.walk(arg):
@@ -34,13 +35,12 @@ def print_tree(arg):
         for f in files:
             levl2.append('{}{}'.format(subindent, f))
     res = levl1 +'\n'+ '\n'.join(i for i in levl2)
-    print(res)
-    return write_log('Call name is "{}" with argument: "{}" \nOunput: \n{}'.format(inspect.stack()[0][3], arg, res))
-
-def print_info():
+    return res
+@logger
+def print_info(arg):
 	res = 'CPU: ' + platform.processor()+ '\n OS: ' + platform.platform()
-	print(res)
-	return write_log('Call name is "{}" \nounput: \n{}'.format(inspect.stack()[0][3], res) )
+#	print(res)
+	return res
 
 
 if __name__ == '__main__':
@@ -52,10 +52,8 @@ if __name__ == '__main__':
 		param = args.path
 		f = globals()[args.action]
 
-		if param != '0':
-			f(param)
-		else:
-			f()
+		print(f(param))
+
 	except Exception:
 		error = sys.exc_info()[0].__name__+'\nCall method: '+args.action+'\nArguments: '+ args.path
 		print(error)
